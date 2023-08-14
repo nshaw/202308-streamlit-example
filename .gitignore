@@ -32,3 +32,6 @@
 ######################
 
 !.gitkeep
+
+##VENV
+microservices/streamlit-ms/.venv/**
