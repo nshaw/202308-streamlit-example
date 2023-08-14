@@ -1,0 +1,21 @@
+{
+    "microservices": [
+        {
+            "name": "streamlit-ms",
+            "stack": "custom",
+            "healthCheckPath": "/api/health",
+            "commands": {
+                "build": "echo 'Please edit this command to customize the build phase' && exit 1",
+                "run": "echo 'Please edit this command to customize the run phase' && exit 1",
+                "pack": "echo 'Please edit this command to customize the pack phase' && exit 1"
+            },
+            "version": "0.0.1"
+        }
+    ],
+    "microfrontends": [],
+    "svc": [],
+    "name": "streamlit-example",
+    "version": "0.0.1",
+    "description": "streamlit-example description",
+    "type": "bundle"
+}
