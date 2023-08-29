@@ -29,6 +29,6 @@ else
 fi
 echo "BASEURLPATH: $BASEURLPATH"
 
-streamlit run ${HOME}/app/streamlit_app.py --server.port=8081 --logger.level=debug --browser.gatherUsageStats=False $BASEURLPATH & APP_ID=${!}
+streamlit run /app/streamlit_app.py --server.port=8081 --logger.level=debug --browser.gatherUsageStats=False $BASEURLPATH & APP_ID=${!}
 
 wait ${APP_ID}

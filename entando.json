@@ -9,13 +9,13 @@
                "run": "streamlit run streamlit_app.py",
                "pack": "docker build -t streamlit-ms ."
              },
-            "version": "0.0.1"
+            "version": "0.0.2"
         }
     ],
     "microfrontends": [],
     "svc": [],
     "name": "streamlit-example",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "streamlit-example description",
     "type": "bundle"
 }

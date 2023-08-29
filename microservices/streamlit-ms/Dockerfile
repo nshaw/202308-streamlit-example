@@ -1,8 +1,5 @@
 FROM python:3.8-slim
 
-RUN groupadd --gid 1000 appuser \
-    && useradd --uid 1000 --gid 1000 -ms /bin/bash appuser
-
 RUN pip3 install --no-cache-dir --upgrade \
     pip \ 
     virtualenv
@@ -12,14 +9,13 @@ RUN apt-get update && apt-get install -y \
     software-properties-common \
     git
 
-USER appuser
-WORKDIR /home/appuser
+WORKDIR /app
 
-COPY . app/
+COPY . /app
 
-ENV VIRTUAL_ENV=/home/appuser/venv
+ENV VIRTUAL_ENV=/app/venv
 RUN virtualenv ${VIRTUAL_ENV}
-RUN . ${VIRTUAL_ENV}/bin/activate && pip install -r app/requirements.txt
+RUN . ${VIRTUAL_ENV}/bin/activate && pip install -r /app/requirements.txt
 
 # Entando settings
 ## Required port for microservices
@@ -27,5 +23,5 @@ EXPOSE 8081
 ## Context path is provided by the engine based on the bundle id
 ENV SERVER_SERVLET_CONTEXT_PATH=/default
 
-COPY run.sh /home/appuser
+COPY run.sh /app
 ENTRYPOINT ["./run.sh"]
